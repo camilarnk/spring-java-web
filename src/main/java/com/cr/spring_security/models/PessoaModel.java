@@ -7,14 +7,14 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "tb_model")
-public class Model {
+public class PessoaModel {
 
     @Id
     @GeneratedValue
     private Long id;
     private String nome;
 
-    public Model() {}
+    public PessoaModel() {}
 
     public Long getId() {
         return id;

@@ -1,27 +1,27 @@
 package com.cr.spring_security.services;
 
-import com.cr.spring_security.models.Model;
-import com.cr.spring_security.repositories.Repository;
+import com.cr.spring_security.models.PessoaModel;
+import com.cr.spring_security.repositories.PessoaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 import java.util.Optional;
 
 @org.springframework.stereotype.Service
-public class Service {
+public class PessoaService {
 
     @Autowired
-    private Repository repository;
+    private PessoaRepository repository;
 
-    public Model create(Model model) {
+    public PessoaModel create(PessoaModel model) {
         return repository.save(model);
     }
 
-    public List<Model> findAll() {
+    public List<PessoaModel> findAll() {
         return repository.findAll();
     }
 
-    public Optional<Model> findById(Long id) {
+    public Optional<PessoaModel> findById(Long id) {
         return repository.findById(id);
     }
 
