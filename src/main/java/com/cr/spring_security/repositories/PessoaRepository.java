@@ -1,7 +1,7 @@
 package com.cr.spring_security.repositories;
 
-import com.cr.spring_security.models.PessoaModel;
+import com.cr.spring_security.models.Pessoa;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface PessoaRepository extends JpaRepository<PessoaModel, Long> {
+public interface PessoaRepository extends JpaRepository<Pessoa, Long> {
 }
