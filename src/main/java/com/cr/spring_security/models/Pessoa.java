@@ -7,7 +7,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "tb_pessoas")
-public class PessoaModel {
+public class Pessoa {
 
     @Id
     @GeneratedValue

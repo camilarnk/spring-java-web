@@ -13,7 +13,7 @@ public class PessoaService {
     @Autowired
     private PessoaRepository repository;
 
-    public PessoaMoPessoadel create(Pessoa model) {
+    public Pessoa create(Pessoa model) {
         return repository.save(model);
     }
 
