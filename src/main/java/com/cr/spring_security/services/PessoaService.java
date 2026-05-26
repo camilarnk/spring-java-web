@@ -13,8 +13,8 @@ public class PessoaService {
     @Autowired
     private PessoaRepository repository;
 
-    public Pessoa create(Pessoa model) {
-        return repository.save(model);
+    public Pessoa create(Pessoa pessoa) {
+        return repository.save(pessoa);
     }
 
     public List<Pessoa> findAll() {

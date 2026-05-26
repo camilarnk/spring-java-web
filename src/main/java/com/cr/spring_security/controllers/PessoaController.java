@@ -19,8 +19,8 @@ public class PessoaController {
     private PessoaService service;
 
     @PostMapping
-    public ResponseEntity<Pessoa> create(@RequestBody Pessoa model) {
-        Pessoa request = service.create(model);
+    public ResponseEntity<Pessoa> create(@RequestBody Pessoa pessoa) {
+        Pessoa request = service.create(pessoa);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest()
                 .path("/{id}")
                 .buildAndExpand(request.getId()).toUri();

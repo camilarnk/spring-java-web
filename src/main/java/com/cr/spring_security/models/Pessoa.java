@@ -2,6 +2,7 @@ package com.cr.spring_security.models;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
