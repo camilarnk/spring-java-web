@@ -25,4 +25,17 @@ public class PessoaService {
         return repository.findById(id);
     }
 
+    public Pessoa update(Pessoa pessoa, Long id) {
+       Pessoa p = repository.findById(id).get();
+
+       p.setNome(pessoa.getNome());
+       p.setEndereco(pessoa.getEndereco());
+
+       return repository.save(p);
+    }
+
+    public void delete(Long id) {
+        repository.deleteById(id);
+    }
+
 }
