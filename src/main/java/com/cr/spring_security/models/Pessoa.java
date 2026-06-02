@@ -5,17 +5,17 @@ import jakarta.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@Entity
-@Table(name = "tb_pessoas")
+@Entity // classifica a classe como uma entidade no banco
+@Table(name = "tb_pessoas") // cria a tabela tb_pessoas no banco de dados
 public class Pessoa {
 
-    @Id
-    @GeneratedValue
+    @Id // classica o atributo como um id
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // gera um id automaticamente
     private Long id;
     private String nome;
     private String endereco;
 
-    @OneToMany
+    @OneToMany // um objeto da classe atual pode se relacionar com vários objetos do tipo declarado
     private List<Job> jobs = new ArrayList<>();
 
     public Pessoa() {}

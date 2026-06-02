@@ -9,12 +9,12 @@ import org.springframework.security.core.userdetails.UserDetails;
 import java.util.Collection;
 import java.util.List;
 
-@Entity
-@Table(name = "tb_users")
+@Entity // classifica a classe como uma entidade no banco
+@Table(name = "tb_users") // cria a tabela tb_users no banco de dados
 public class User implements UserDetails {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id // classica o atributo como um id
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // gera um id automaticamente
     private Long id;
     private String login;
     private String password;
@@ -34,7 +34,7 @@ public class User implements UserDetails {
         this.login = login;
     }
 
-    @Override
+    @Override // sobreescreve o metodo
     public Collection<? extends GrantedAuthority> getAuthorities() {
         if(this.role == UserRole.ADMIN) {
             return List.of
@@ -49,7 +49,7 @@ public class User implements UserDetails {
         return password;
     }
 
-    @Override
+    @Override // sobreescreve o metodo
     public String getUsername() {
         return login;
     }
