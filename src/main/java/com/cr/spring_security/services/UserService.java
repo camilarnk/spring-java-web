@@ -7,13 +7,13 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-@Service
+@Service // classifica essa classe como uma camada de serviço
 public class UserService implements UserDetailsService {
 
-    @Autowired
+    @Autowired // injeta as dependencias da classe UserRepository
     private UserRepository userRepository;
 
-    @Override
+    @Override // sobreescreve o metodo loadUserByUsername vindo de outra classe
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         return userRepository.findByLogin(username);
     }

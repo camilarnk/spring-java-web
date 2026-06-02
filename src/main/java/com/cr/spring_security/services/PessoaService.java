@@ -3,14 +3,15 @@ package com.cr.spring_security.services;
 import com.cr.spring_security.models.Pessoa;
 import com.cr.spring_security.repositories.PessoaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
-@org.springframework.stereotype.Service
+@Service // classifica essa classe como uma camada de serviço
 public class PessoaService {
 
-    @Autowired
+    @Autowired // injeta as dependencias da classe PessoaRepository
     private PessoaRepository repository;
 
     public Pessoa create(Pessoa pessoa) {
