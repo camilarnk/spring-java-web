@@ -8,8 +8,8 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.SecurityFilterChain;
 
-@Configuration
-@EnableWebSecurity
+@Configuration // define como classe de configuraçao
+@EnableWebSecurity // a classe habilita e desabilita o spring security
 public class SecurityConfiguration {
 
     @Bean
@@ -18,6 +18,7 @@ public class SecurityConfiguration {
                 .sessionManagement(session ->
                         session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(auth ->
+                        // libera o acesso ao get de /pessoas sem estar autenticado
                         auth.requestMatchers(HttpMethod.GET, "/pessoas").permitAll()
                                 .requestMatchers(HttpMethod.POST, "/pessoas").permitAll()
                                 .requestMatchers(HttpMethod.DELETE, "/pessoas/**").permitAll())
